@@ -18,6 +18,9 @@ double LinearFunction::countY(double x) {
 }
 
 Vertex* LinearFunction::countIntersection(LinearFunction* func) {
+    if(this->getA() == func->getA())
+        return nullptr;
+
     double x = (func->getB() - this->getB()) / (this->getA() - func->getA());
     return new Vertex(x, this->countY(x));
 }
