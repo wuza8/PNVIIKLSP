@@ -1,0 +1,3 @@
+/home/wgaj/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir
+/home/wgaj/PNVIIKLSP/build/CMakeFiles/edit_cache.dir
+/home/wgaj/PNVIIKLSP/build/CMakeFiles/rebuild_cache.dir
