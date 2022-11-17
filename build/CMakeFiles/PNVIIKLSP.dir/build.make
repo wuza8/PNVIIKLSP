@@ -125,12 +125,87 @@ CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/math/linearfunction.cpp -o CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.s
 
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o: CMakeFiles/PNVIIKLSP.dir/flags.make
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o: ../cmdline/cmdfunctionloader.cpp
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o: CMakeFiles/PNVIIKLSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o -MF CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o.d -o CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o -c /home/wgaj/PNVIIKLSP/cmdline/cmdfunctionloader.cpp
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wgaj/PNVIIKLSP/cmdline/cmdfunctionloader.cpp > CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.i
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/cmdline/cmdfunctionloader.cpp -o CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.s
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o: CMakeFiles/PNVIIKLSP.dir/flags.make
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o: ../cmdline/cmdregistry.cpp
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o: CMakeFiles/PNVIIKLSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o -MF CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o.d -o CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o -c /home/wgaj/PNVIIKLSP/cmdline/cmdregistry.cpp
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wgaj/PNVIIKLSP/cmdline/cmdregistry.cpp > CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.i
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/cmdline/cmdregistry.cpp -o CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.s
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o: CMakeFiles/PNVIIKLSP.dir/flags.make
+CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o: ../cmdline/inlinecommandhandler.cpp
+CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o: CMakeFiles/PNVIIKLSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o -MF CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o.d -o CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o -c /home/wgaj/PNVIIKLSP/cmdline/inlinecommandhandler.cpp
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wgaj/PNVIIKLSP/cmdline/inlinecommandhandler.cpp > CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.i
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/cmdline/inlinecommandhandler.cpp -o CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.s
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o: CMakeFiles/PNVIIKLSP.dir/flags.make
+CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o: ../cmdline/helpcommand.cpp
+CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o: CMakeFiles/PNVIIKLSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o -MF CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o.d -o CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o -c /home/wgaj/PNVIIKLSP/cmdline/helpcommand.cpp
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wgaj/PNVIIKLSP/cmdline/helpcommand.cpp > CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.i
+
+CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/cmdline/helpcommand.cpp -o CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.s
+
+CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o: CMakeFiles/PNVIIKLSP.dir/flags.make
+CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o: ../services/functionservice.cpp
+CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o: CMakeFiles/PNVIIKLSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o -MF CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o.d -o CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o -c /home/wgaj/PNVIIKLSP/services/functionservice.cpp
+
+CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wgaj/PNVIIKLSP/services/functionservice.cpp > CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.i
+
+CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/services/functionservice.cpp -o CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.s
+
 # Object files for target PNVIIKLSP
 PNVIIKLSP_OBJECTS = \
 "CMakeFiles/PNVIIKLSP.dir/main.cpp.o" \
 "CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o" \
 "CMakeFiles/PNVIIKLSP.dir/math/vertex.cpp.o" \
-"CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.o"
+"CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.o" \
+"CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o" \
+"CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o" \
+"CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o" \
+"CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o" \
+"CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o"
 
 # External object files for target PNVIIKLSP
 PNVIIKLSP_EXTERNAL_OBJECTS =
@@ -139,9 +214,14 @@ PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/main.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/math/vertex.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.o
+PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o
+PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o
+PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o
+PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o
+PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/build.make
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable PNVIIKLSP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable PNVIIKLSP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PNVIIKLSP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -129,6 +129,102 @@ PNVIIKLSP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/build
 .PHONY : PNVIIKLSP/fast
 
+cmdline/cmdfunctionloader.o: cmdline/cmdfunctionloader.cpp.o
+.PHONY : cmdline/cmdfunctionloader.o
+
+# target to build an object file
+cmdline/cmdfunctionloader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o
+.PHONY : cmdline/cmdfunctionloader.cpp.o
+
+cmdline/cmdfunctionloader.i: cmdline/cmdfunctionloader.cpp.i
+.PHONY : cmdline/cmdfunctionloader.i
+
+# target to preprocess a source file
+cmdline/cmdfunctionloader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.i
+.PHONY : cmdline/cmdfunctionloader.cpp.i
+
+cmdline/cmdfunctionloader.s: cmdline/cmdfunctionloader.cpp.s
+.PHONY : cmdline/cmdfunctionloader.s
+
+# target to generate assembly for a file
+cmdline/cmdfunctionloader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.s
+.PHONY : cmdline/cmdfunctionloader.cpp.s
+
+cmdline/cmdregistry.o: cmdline/cmdregistry.cpp.o
+.PHONY : cmdline/cmdregistry.o
+
+# target to build an object file
+cmdline/cmdregistry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o
+.PHONY : cmdline/cmdregistry.cpp.o
+
+cmdline/cmdregistry.i: cmdline/cmdregistry.cpp.i
+.PHONY : cmdline/cmdregistry.i
+
+# target to preprocess a source file
+cmdline/cmdregistry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.i
+.PHONY : cmdline/cmdregistry.cpp.i
+
+cmdline/cmdregistry.s: cmdline/cmdregistry.cpp.s
+.PHONY : cmdline/cmdregistry.s
+
+# target to generate assembly for a file
+cmdline/cmdregistry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.s
+.PHONY : cmdline/cmdregistry.cpp.s
+
+cmdline/helpcommand.o: cmdline/helpcommand.cpp.o
+.PHONY : cmdline/helpcommand.o
+
+# target to build an object file
+cmdline/helpcommand.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o
+.PHONY : cmdline/helpcommand.cpp.o
+
+cmdline/helpcommand.i: cmdline/helpcommand.cpp.i
+.PHONY : cmdline/helpcommand.i
+
+# target to preprocess a source file
+cmdline/helpcommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.i
+.PHONY : cmdline/helpcommand.cpp.i
+
+cmdline/helpcommand.s: cmdline/helpcommand.cpp.s
+.PHONY : cmdline/helpcommand.s
+
+# target to generate assembly for a file
+cmdline/helpcommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.s
+.PHONY : cmdline/helpcommand.cpp.s
+
+cmdline/inlinecommandhandler.o: cmdline/inlinecommandhandler.cpp.o
+.PHONY : cmdline/inlinecommandhandler.o
+
+# target to build an object file
+cmdline/inlinecommandhandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o
+.PHONY : cmdline/inlinecommandhandler.cpp.o
+
+cmdline/inlinecommandhandler.i: cmdline/inlinecommandhandler.cpp.i
+.PHONY : cmdline/inlinecommandhandler.i
+
+# target to preprocess a source file
+cmdline/inlinecommandhandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.i
+.PHONY : cmdline/inlinecommandhandler.cpp.i
+
+cmdline/inlinecommandhandler.s: cmdline/inlinecommandhandler.cpp.s
+.PHONY : cmdline/inlinecommandhandler.s
+
+# target to generate assembly for a file
+cmdline/inlinecommandhandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.s
+.PHONY : cmdline/inlinecommandhandler.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -225,6 +321,30 @@ pnviiklsp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.s
 .PHONY : pnviiklsp.cpp.s
 
+services/functionservice.o: services/functionservice.cpp.o
+.PHONY : services/functionservice.o
+
+# target to build an object file
+services/functionservice.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o
+.PHONY : services/functionservice.cpp.o
+
+services/functionservice.i: services/functionservice.cpp.i
+.PHONY : services/functionservice.i
+
+# target to preprocess a source file
+services/functionservice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.i
+.PHONY : services/functionservice.cpp.i
+
+services/functionservice.s: services/functionservice.cpp.s
+.PHONY : services/functionservice.s
+
+# target to generate assembly for a file
+services/functionservice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.s
+.PHONY : services/functionservice.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,6 +354,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... PNVIIKLSP"
+	@echo "... cmdline/cmdfunctionloader.o"
+	@echo "... cmdline/cmdfunctionloader.i"
+	@echo "... cmdline/cmdfunctionloader.s"
+	@echo "... cmdline/cmdregistry.o"
+	@echo "... cmdline/cmdregistry.i"
+	@echo "... cmdline/cmdregistry.s"
+	@echo "... cmdline/helpcommand.o"
+	@echo "... cmdline/helpcommand.i"
+	@echo "... cmdline/helpcommand.s"
+	@echo "... cmdline/inlinecommandhandler.o"
+	@echo "... cmdline/inlinecommandhandler.i"
+	@echo "... cmdline/inlinecommandhandler.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -246,6 +378,9 @@ help:
 	@echo "... pnviiklsp.o"
 	@echo "... pnviiklsp.i"
 	@echo "... pnviiklsp.s"
+	@echo "... services/functionservice.o"
+	@echo "... services/functionservice.i"
+	@echo "... services/functionservice.s"
 .PHONY : help
 
 

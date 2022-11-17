@@ -10,7 +10,7 @@
         }
     }
 
-    std::vector<LinearFunction*> loadFunctionsFromArgs(int argc, char *argv[]) {
+    std::vector<LinearFunction*> CmdFunctionLoader::loadFunctionsFromArgs(int argc, char *argv[]) {
         std::vector<LinearFunction*> functions;
         if(argc % 2 != 1){
             std::cout<<"Podaj parzystą ilość argumentów!"<<std::endl;

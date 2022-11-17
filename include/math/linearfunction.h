@@ -1,5 +1,5 @@
 #include "math/vertex.h"
-
+#include <string>
 #ifndef MATH_LINEARFUNCTION_H
 #define MATH_LINEARFUNCTION_H
 
@@ -23,5 +23,7 @@ public:
     //TODO coś nie tak, bo nie zwróci nigdy nulla, ale to poootem xD
     //TODO testy
     Vertex* countIntersection(LinearFunction* func);
+
+    std::string toString();
 };
 #endif

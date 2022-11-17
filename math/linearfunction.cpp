@@ -21,3 +21,7 @@ Vertex* LinearFunction::countIntersection(LinearFunction* func) {
     double x = (func->getB() - this->getB()) / (this->getA() - func->getA());
     return new Vertex(x, this->countY(x));
 }
+
+std::string LinearFunction::toString(){
+    return "y="+std::to_string(a)+"x+"+std::to_string(b);
+}

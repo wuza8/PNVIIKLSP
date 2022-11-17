@@ -152,4 +152,13 @@ CMakeFiles/PNVIIKLSP.dir/main.cpp.o: /home/wgaj/PNVIIKLSP/main.cpp \
  /home/wgaj/PNVIIKLSP/include/math/linearfunction.h \
  /home/wgaj/PNVIIKLSP/include/math/vertex.h \
  /home/wgaj/PNVIIKLSP/include/pnviiklsp.h \
- /home/wgaj/PNVIIKLSP/include/math/linearfunction.h
+ /home/wgaj/PNVIIKLSP/include/math/linearfunction.h \
+ /home/wgaj/PNVIIKLSP/include/cmdline/cmdfunctionloader.h \
+ /home/wgaj/PNVIIKLSP/include/math/vertex.h \
+ /home/wgaj/PNVIIKLSP/include/cmdline/cmdregistry.h \
+ /home/wgaj/PNVIIKLSP/include/cmdline/commandhandler.h \
+ /home/wgaj/PNVIIKLSP/include/cmdline/inlinecommandhandler.h \
+ /home/wgaj/PNVIIKLSP/include/cmdline/helpcommand.h \
+ /home/wgaj/PNVIIKLSP/include/cmdline/cmdregistry.h \
+ /home/wgaj/PNVIIKLSP/include/cmdline/commandhandler.h \
+ /home/wgaj/PNVIIKLSP/include/services/functionservice.h
