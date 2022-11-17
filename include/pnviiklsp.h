@@ -26,7 +26,7 @@ class PNVIIKLSP{
     void cmdlineLoop(){
         std::string command;
         std::cout<<">>";
-        
+
         while(std::getline(std::cin, command)){
             commandRegistry.executeCommand(command);
             std::cout<<">>";
@@ -44,6 +44,12 @@ public:
 
         commandRegistry.registerCommandHandler(new InlineCommandHandler("quit", "wychodzi z programu",[](std::string args){
             exit(0);
+        }));
+
+        commandRegistry.registerCommandHandler(new InlineCommandHandler("clear", "czyści cmdline",[](std::string args){
+            for(int i=0;i<100;i++){
+                std::cout<<std::endl;
+            }
         }));
 
         commandRegistry.registerCommandHandler(
