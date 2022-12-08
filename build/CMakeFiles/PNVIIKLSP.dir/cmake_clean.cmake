@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/PNVIIKLSP.dir/math/vertex.cpp.o.d"
   "CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o"
   "CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o.d"
+  "CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o"
+  "CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o.d"
   "CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o"
   "CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o.d"
   "PNVIIKLSP"

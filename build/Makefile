@@ -129,6 +129,19 @@ PNVIIKLSP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/build
 .PHONY : PNVIIKLSP/fast
 
+#=============================================================================
+# Target rules for targets named Renderer
+
+# Build rule for target.
+Renderer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Renderer
+.PHONY : Renderer
+
+# fast build rule for target.
+Renderer/fast:
+	$(MAKE) $(MAKESILENT) -f renderer/CMakeFiles/Renderer.dir/build.make renderer/CMakeFiles/Renderer.dir/build
+.PHONY : Renderer/fast
+
 cmdline/cmdfunctionloader.o: cmdline/cmdfunctionloader.cpp.o
 .PHONY : cmdline/cmdfunctionloader.o
 
@@ -321,6 +334,30 @@ pnviiklsp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.s
 .PHONY : pnviiklsp.cpp.s
 
+renderer/renderer.o: renderer/renderer.cpp.o
+.PHONY : renderer/renderer.o
+
+# target to build an object file
+renderer/renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o
+.PHONY : renderer/renderer.cpp.o
+
+renderer/renderer.i: renderer/renderer.cpp.i
+.PHONY : renderer/renderer.i
+
+# target to preprocess a source file
+renderer/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.i
+.PHONY : renderer/renderer.cpp.i
+
+renderer/renderer.s: renderer/renderer.cpp.s
+.PHONY : renderer/renderer.s
+
+# target to generate assembly for a file
+renderer/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.s
+.PHONY : renderer/renderer.cpp.s
+
 services/functionservice.o: services/functionservice.cpp.o
 .PHONY : services/functionservice.o
 
@@ -354,6 +391,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... PNVIIKLSP"
+	@echo "... Renderer"
 	@echo "... cmdline/cmdfunctionloader.o"
 	@echo "... cmdline/cmdfunctionloader.i"
 	@echo "... cmdline/cmdfunctionloader.s"
@@ -378,6 +416,9 @@ help:
 	@echo "... pnviiklsp.o"
 	@echo "... pnviiklsp.i"
 	@echo "... pnviiklsp.s"
+	@echo "... renderer/renderer.o"
+	@echo "... renderer/renderer.i"
+	@echo "... renderer/renderer.s"
 	@echo "... services/functionservice.o"
 	@echo "... services/functionservice.i"
 	@echo "... services/functionservice.s"
