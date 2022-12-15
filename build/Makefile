@@ -286,6 +286,30 @@ math/linearfunction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.s
 .PHONY : math/linearfunction.cpp.s
 
+math/triangle.o: math/triangle.cpp.o
+.PHONY : math/triangle.o
+
+# target to build an object file
+math/triangle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o
+.PHONY : math/triangle.cpp.o
+
+math/triangle.i: math/triangle.cpp.i
+.PHONY : math/triangle.i
+
+# target to preprocess a source file
+math/triangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.i
+.PHONY : math/triangle.cpp.i
+
+math/triangle.s: math/triangle.cpp.s
+.PHONY : math/triangle.s
+
+# target to generate assembly for a file
+math/triangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.s
+.PHONY : math/triangle.cpp.s
+
 math/vertex.o: math/vertex.cpp.o
 .PHONY : math/vertex.o
 
@@ -358,6 +382,30 @@ renderer/renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.s
 .PHONY : renderer/renderer.cpp.s
 
+services/functioncommand.o: services/functioncommand.cpp.o
+.PHONY : services/functioncommand.o
+
+# target to build an object file
+services/functioncommand.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o
+.PHONY : services/functioncommand.cpp.o
+
+services/functioncommand.i: services/functioncommand.cpp.i
+.PHONY : services/functioncommand.i
+
+# target to preprocess a source file
+services/functioncommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.i
+.PHONY : services/functioncommand.cpp.i
+
+services/functioncommand.s: services/functioncommand.cpp.s
+.PHONY : services/functioncommand.s
+
+# target to generate assembly for a file
+services/functioncommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PNVIIKLSP.dir/build.make CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.s
+.PHONY : services/functioncommand.cpp.s
+
 services/functionservice.o: services/functionservice.cpp.o
 .PHONY : services/functionservice.o
 
@@ -410,6 +458,9 @@ help:
 	@echo "... math/linearfunction.o"
 	@echo "... math/linearfunction.i"
 	@echo "... math/linearfunction.s"
+	@echo "... math/triangle.o"
+	@echo "... math/triangle.i"
+	@echo "... math/triangle.s"
 	@echo "... math/vertex.o"
 	@echo "... math/vertex.i"
 	@echo "... math/vertex.s"
@@ -419,6 +470,9 @@ help:
 	@echo "... renderer/renderer.o"
 	@echo "... renderer/renderer.i"
 	@echo "... renderer/renderer.s"
+	@echo "... services/functioncommand.o"
+	@echo "... services/functioncommand.i"
+	@echo "... services/functioncommand.s"
 	@echo "... services/functionservice.o"
 	@echo "... services/functionservice.i"
 	@echo "... services/functionservice.s"

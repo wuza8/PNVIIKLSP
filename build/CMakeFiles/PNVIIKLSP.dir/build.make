@@ -209,6 +209,34 @@ CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/renderer/renderer.cpp -o CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.s
 
+CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o: CMakeFiles/PNVIIKLSP.dir/flags.make
+CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o: ../math/triangle.cpp
+CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o: CMakeFiles/PNVIIKLSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o -MF CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o.d -o CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o -c /home/wgaj/PNVIIKLSP/math/triangle.cpp
+
+CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wgaj/PNVIIKLSP/math/triangle.cpp > CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.i
+
+CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/math/triangle.cpp -o CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.s
+
+CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o: CMakeFiles/PNVIIKLSP.dir/flags.make
+CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o: ../services/functioncommand.cpp
+CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o: CMakeFiles/PNVIIKLSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o -MF CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o.d -o CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o -c /home/wgaj/PNVIIKLSP/services/functioncommand.cpp
+
+CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wgaj/PNVIIKLSP/services/functioncommand.cpp > CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.i
+
+CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wgaj/PNVIIKLSP/services/functioncommand.cpp -o CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.s
+
 # Object files for target PNVIIKLSP
 PNVIIKLSP_OBJECTS = \
 "CMakeFiles/PNVIIKLSP.dir/main.cpp.o" \
@@ -220,7 +248,9 @@ PNVIIKLSP_OBJECTS = \
 "CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o" \
 "CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o" \
 "CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o" \
-"CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o"
+"CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o" \
+"CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o" \
+"CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o"
 
 # External object files for target PNVIIKLSP
 PNVIIKLSP_EXTERNAL_OBJECTS =
@@ -235,10 +265,12 @@ PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o
+PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o
+PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/build.make
 PNVIIKLSP: renderer/libRenderer.a
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable PNVIIKLSP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wgaj/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable PNVIIKLSP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PNVIIKLSP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

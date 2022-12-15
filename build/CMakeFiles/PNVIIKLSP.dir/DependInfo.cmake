@@ -14,9 +14,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/wgaj/PNVIIKLSP/cmdline/inlinecommandhandler.cpp" "CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o.d"
   "/home/wgaj/PNVIIKLSP/main.cpp" "CMakeFiles/PNVIIKLSP.dir/main.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/main.cpp.o.d"
   "/home/wgaj/PNVIIKLSP/math/linearfunction.cpp" "CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.o.d"
+  "/home/wgaj/PNVIIKLSP/math/triangle.cpp" "CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o.d"
   "/home/wgaj/PNVIIKLSP/math/vertex.cpp" "CMakeFiles/PNVIIKLSP.dir/math/vertex.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/math/vertex.cpp.o.d"
   "/home/wgaj/PNVIIKLSP/pnviiklsp.cpp" "CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o.d"
   "/home/wgaj/PNVIIKLSP/renderer/renderer.cpp" "CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o.d"
+  "/home/wgaj/PNVIIKLSP/services/functioncommand.cpp" "CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o.d"
   "/home/wgaj/PNVIIKLSP/services/functionservice.cpp" "CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o.d"
   )
 
