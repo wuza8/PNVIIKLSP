@@ -1,30 +1,30 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
   )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/user/git/PNVIIKLSP/cmdline/cmdfunctionloader.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o"
+  "/home/user/git/PNVIIKLSP/cmdline/cmdregistry.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o"
+  "/home/user/git/PNVIIKLSP/cmdline/helpcommand.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o"
+  "/home/user/git/PNVIIKLSP/cmdline/inlinecommandhandler.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o"
+  "/home/user/git/PNVIIKLSP/main.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/main.cpp.o"
+  "/home/user/git/PNVIIKLSP/math/linearfunction.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.o"
+  "/home/user/git/PNVIIKLSP/math/vertex.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/math/vertex.cpp.o"
+  "/home/user/git/PNVIIKLSP/pnviiklsp.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o"
+  "/home/user/git/PNVIIKLSP/renderer/renderer.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o"
+  "/home/user/git/PNVIIKLSP/services/functionservice.cpp" "/home/user/git/PNVIIKLSP/build/CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/wgaj/PNVIIKLSP/cmdline/cmdfunctionloader.cpp" "CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/cmdline/cmdfunctionloader.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/cmdline/cmdregistry.cpp" "CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/cmdline/cmdregistry.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/cmdline/helpcommand.cpp" "CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/cmdline/helpcommand.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/cmdline/inlinecommandhandler.cpp" "CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/cmdline/inlinecommandhandler.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/main.cpp" "CMakeFiles/PNVIIKLSP.dir/main.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/main.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/math/linearfunction.cpp" "CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/math/linearfunction.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/math/triangle.cpp" "CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/math/vertex.cpp" "CMakeFiles/PNVIIKLSP.dir/math/vertex.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/math/vertex.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/pnviiklsp.cpp" "CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/pnviiklsp.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/renderer/renderer.cpp" "CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/renderer/renderer.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/services/functioncommand.cpp" "CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/services/functioncommand.cpp.o.d"
-  "/home/wgaj/PNVIIKLSP/services/functionservice.cpp" "CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o" "gcc" "CMakeFiles/PNVIIKLSP.dir/services/functionservice.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/include/SDL2"
+  "../include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/wgaj/PNVIIKLSP/build/renderer/CMakeFiles/Renderer.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

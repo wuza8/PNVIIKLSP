@@ -7,15 +7,35 @@
 #include "cmdline/helpcommand.h"
 #include "cmdline/commandhandler.h"
 #include "services/functionservice.h"
+#include "renderer/renderer.h"
 
 #ifndef PNVIIKLSP_H
 #define PNVIIKLSP_H
 
+void drawProgram(){
+    //Render grid
+    for(float x = -100;x<100;x++)
+        Renderer::line(x,-100,x,+100, 100,100,100);
+    
+    for(float y = -100;y<100;y++)
+        Renderer::line(-100,y,+100,y, 100,100,100);
+    
+    Renderer::line(-100, 0, 100,0);
+    Renderer::line(0, 100,0, -100);
 
+    //Render functions
+    for(LinearFunction* func : FunctionService::getFunctions()){
+        Renderer::line(-100, func->countY(-100), 100, func->countY(100));
+    }
+
+    
+}
 
 class PNVIIKLSP{
     
     CommandRegistry commandRegistry;
+
+    
 
     void bootstrap(int argc, char *argv[]){
         std::cout<<"Witaj w PNVIIKLSP! Aby poznać listę komand wpisz \'help\'"<<std::endl;
@@ -91,6 +111,10 @@ public:
                 std::cout<<"\tPunkt ("<<v->getX()<<", "<<v->getY()<<")"<<std::endl;
             }
         }));
+
+        //Initializacja renderera
+        Renderer::init();
+        Renderer::setDrawProgram(drawProgram);
 
         cmdlineLoop();
 
