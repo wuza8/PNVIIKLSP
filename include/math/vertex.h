@@ -1,9 +1,10 @@
 #include <iostream>
+#include "utils/named.h"
 
 #ifndef MATH_VERTEX_H
 #define MATH_VERTEX_H
 
-class Vertex {
+class Vertex : public Named{
     double x, y;
     bool valid = true;
 public:

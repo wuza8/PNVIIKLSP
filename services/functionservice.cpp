@@ -33,12 +33,17 @@ std::vector<LinearFunction*> FunctionService::getFunctions(){
 
 std::vector<Vertex> FunctionService::countVertices() {
     std::vector<Vertex> vertices;
+    char name = '1';
 
     for(int i=0;i<functions.size()-1;i++)
         for (int j = i + 1; j < functions.size(); j++)
         {
             Vertex vertex = functions[i]->countIntersection(functions[j]);
-            if (vertex.isValid()) vertices.push_back(vertex);
+            if (vertex.isValid()) {
+                vertex.setName(std::string(1, name));
+                name++;
+                vertices.push_back(vertex);
+            }
         }
     return vertices;
 }
@@ -58,6 +63,28 @@ std::vector<Triangle> FunctionService::triangulizeVertices() {
         triangles.push_back(Triangle(vertexes[0], vertexes[1],vertexes[2]));
     }
 
+    return triangles;
+}
+
+std::vector<Triangle> FunctionService::allTriangles(){
+    std::vector<Triangle> triangles;
+    std::vector<Vertex> vertices = FunctionService::countVertices();
+
+    for(int i=0;i<vertices.size()-2;i++)
+        for (int j =i+1; j < vertices.size()-1; j++)
+            for(int k=j+1;k<vertices.size();k++)
+            {
+                Triangle t = Triangle(vertices[i], vertices[j],vertices[k]);
+                bool isAlready = false;
+
+                for(Triangle z : triangles){
+                    if(t.getHash() == z.getHash())
+                        isAlready=true;
+                }
+
+                if(t.countArea() != 0 && isAlready == false)
+                    triangles.push_back(Triangle(vertices[i], vertices[j],vertices[k]));
+            }
     return triangles;
 }
 

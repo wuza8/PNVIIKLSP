@@ -11,6 +11,9 @@ public:
     float countArea();
     float countObwod();
     Vertex * getVertexes();
+
+    std::string getName();
+    int getHash();
 };
 
 #endif

@@ -11,7 +11,8 @@ namespace Renderer{
     void triangleInterpolation(int num);
     void close();
     void setDrawProgram(void (*foo)());
-
+    void text(float x, float y, std::string text);
+    void number(float x, float y, char c, Color color);
 }
 
 

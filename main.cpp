@@ -13,6 +13,7 @@ void drawProgram(){
     Color smallGridColor = Color(100,100,100);
     Color bigGridColor = Color(120,180,120);
     Color pointColor = Color(255,0,0);
+    Color fontColor = Color(255,0,255);
 
     for(float x = -100;x<100;x++)
         Renderer::line(x,-100,x,+100, smallGridColor);
@@ -28,10 +29,6 @@ void drawProgram(){
         Renderer::line(-100, func->countY(-100), 100, func->countY(100), func->getColor());
     }
 
-    //Render points
-    for(Vertex point : FunctionService::countVertices()){
-        Renderer::point(point.getX(), point.getY(), pointColor);
-    }
 
     //Render triangles
     for(Triangle triangle : FunctionService::triangulizeVertices()){
@@ -40,6 +37,11 @@ void drawProgram(){
             triangle.getVertexes()[1].getX(), triangle.getVertexes()[1].getY(),
             triangle.getVertexes()[2].getX(), triangle.getVertexes()[2].getY()
         );
+    }
+    //Render points
+    for(Vertex point : FunctionService::countVertices()){
+        Renderer::number(point.getX(), point.getY(), point.getName()[0], fontColor);
+        Renderer::point(point.getX(), point.getY(), pointColor);
     }
 }
 
@@ -193,6 +195,17 @@ void registerCommands(){
         }
 
         
+    }));
+
+    commandRegistry.registerCommandHandler(
+        new InlineCommandHandler("triangs", "info o wszystkich trójkatach",[](std::string args)
+    {
+        std::cout<<"Informacja o wszystkich trójkątach:"<<std::endl;
+        std::vector<Triangle> trojkaty = FunctionService::allTriangles();
+
+        for(Triangle t : trojkaty){
+            std::cout<<"Trójkąt "<<t.getName()<<" Pole: "<<t.countArea()<<" Obwód: "<<t.countObwod()<<std::endl;
+        }
     }));
 }
 

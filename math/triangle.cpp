@@ -19,9 +19,17 @@ float Triangle::countArea(){
 }
 
 float Triangle::countObwod(){
-    return Line(&vertexes[0], &vertexes[1]).countLength() + Line(&vertexes[1], &vertexes[2]).countLength() + Line(&vertexes[2], &vertexes[0]).countLength();
+    return Line(vertexes[0], vertexes[1]).countLength() + Line(vertexes[1], vertexes[2]).countLength() + Line(vertexes[2], vertexes[0]).countLength();
 }
 
 Vertex* Triangle::getVertexes(){
     return vertexes;
+}
+
+std::string Triangle::getName(){
+    return vertexes[0].getName()+vertexes[1].getName()+vertexes[2].getName();
+}
+
+int Triangle::getHash(){
+    return vertexes[0].getName()[0]+vertexes[1].getName()[0]+vertexes[2].getName()[0];
 }

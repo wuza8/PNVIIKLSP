@@ -17,6 +17,7 @@ public:
     static std::vector<Triangle> triangulizeVertices();
     static std::vector<Wezel> znajdzWezly();
     static float obliczObwod();
+    static std::vector<Triangle> allTriangles();
 };
 
 #endif
