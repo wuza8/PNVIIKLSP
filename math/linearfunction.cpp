@@ -17,12 +17,12 @@ double LinearFunction::countY(double x) {
     return this->getA() * x + this->getB();
 }
 
-Vertex* LinearFunction::countIntersection(LinearFunction* func) {
+Vertex LinearFunction::countIntersection(LinearFunction* func) {
     if(this->getA() == func->getA())
-        return nullptr;
+        return Vertex(false);
 
     double x = (func->getB() - this->getB()) / (this->getA() - func->getA());
-    return new Vertex(x, this->countY(x));
+    return Vertex(x, this->countY(x));
 }
 
 std::string LinearFunction::toString(){

@@ -20,6 +20,12 @@ add_executable(PNVIIKLSP
     cmdline/inlinecommandhandler.cpp
     cmdline/helpcommand.cpp
     services/functionservice.cpp
-    renderer/renderer.cpp)
+    renderer/renderer.cpp
+    renderer/color.cpp
+    renderer/colored.cpp
+    math/line.cpp
+    math/triangle.cpp
+    math/wezel.cpp
+    utils/named.cpp)
 target_link_libraries(PNVIIKLSP ${SDL2_LIBRARIES})
 target_include_directories(PNVIIKLSP PUBLIC "${PROJECT_SOURCE_DIR}/include")
