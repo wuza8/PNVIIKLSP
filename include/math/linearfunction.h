@@ -14,6 +14,9 @@ public:
     double getA();
 
     double getB();
+
+    void setA(double a);
+    void setB(double b);
     //TODO testy
     double countY(double x);
 

@@ -332,6 +332,7 @@ PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/math/triangle.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/math/wezel.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/utils/named.cpp.o
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/build.make
+PNVIIKLSP: /usr/local/lib/libSDL2_ttf.so
 PNVIIKLSP: CMakeFiles/PNVIIKLSP.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/git/PNVIIKLSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable PNVIIKLSP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PNVIIKLSP.dir/link.txt --verbose=$(VERBOSE)

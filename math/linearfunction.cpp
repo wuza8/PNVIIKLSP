@@ -13,6 +13,13 @@ double LinearFunction::getB() {
     return b;
 }
 
+void LinearFunction::setA(double a){
+    this->a = a;
+}
+void LinearFunction::setB(double b){
+    this->b = b;
+}
+
 double LinearFunction::countY(double x) {
     return this->getA() * x + this->getB();
 }

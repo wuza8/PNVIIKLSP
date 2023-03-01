@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/usr/include/SDL2 -I/home/user/git/PNVIIKLSP/include
 
-CXX_FLAGS =  -pthread
+CXX_FLAGS =  -pthread 
 

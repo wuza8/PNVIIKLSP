@@ -233,8 +233,29 @@ PNVIIKLSP_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 PNVIIKLSP_SOURCE_DIR:STATIC=/home/user/git/PNVIIKLSP
 
+//Path to a library.
+SDL2TTFMAIN_LIBRARY:FILEPATH=/usr/local/lib/libSDL2_ttf.so
+
+//The directory containing a CMake configuration file for SDL2TTF.
+SDL2TTF_DIR:PATH=SDL2TTF_DIR-NOTFOUND
+
+//Path to a file.
+SDL2TTF_INCLUDE_DIR:PATH=/usr/local/include/SDL2
+
+//Where the SDL2TTF Library can be found
+SDL2TTF_LIBRARY:STRING=/usr/local/lib/libSDL2_ttf.so;/usr/local/lib/libSDL2_ttf.so
+
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
+
+//The directory containing a CMake configuration file for SDL2_.
+SDL2__DIR:PATH=SDL2__DIR-NOTFOUND
+
+//Path to a file.
+SDL_TTF_INCLUDE_DIR:PATH=SDL_TTF_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+SDL_TTF_LIBRARY:FILEPATH=SDL_TTF_LIBRARY-NOTFOUND
 
 
 ########################
@@ -319,6 +340,10 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
+//Have include pthread.h
+CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/user/git/PNVIIKLSP
@@ -384,4 +409,9 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding SDL2TTF
+FIND_PACKAGE_MESSAGE_DETAILS_SDL2TTF:INTERNAL=[/usr/local/lib/libSDL2_ttf.so;/usr/local/lib/libSDL2_ttf.so][/usr/local/include/SDL2][v()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+SDL2TTF_LIBRARY_TEMP:INTERNAL=/usr/local/lib/libSDL2_ttf.so;/usr/local/lib/libSDL2_ttf.so;/usr/local/lib/libSDL2_ttf.so
 

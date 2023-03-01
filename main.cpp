@@ -8,7 +8,202 @@ using namespace std;
 
 CommandRegistry commandRegistry;
 
+class RenderableObject{
+public:
+    virtual void onButtonClick(SDL_KeyboardEvent * event) = 0;
+    virtual void renderProgram() = 0;
+    virtual void onScreenClick(int x, int y) = 0;
+};
+
+class Button : public RenderableObject{
+    public:
+    std::string text;
+    int x,y,w=80,h=26;
+    void (*onClick)();
+
+    Button(int x, int y, std::string text){
+        this->x = x;
+        this->y = y;
+        this->text = text;
+    }
+
+    virtual void renderProgram(){
+        Renderer::textOnScreen(x,y,20, text, Color(255,0,0));
+        Renderer::rectOnScreen(x-2,y-2, w, h, Color(255,0,0));
+    }
+
+    virtual void onButtonClick(SDL_KeyboardEvent * event){}
+
+    virtual void onScreenClick(int mx, int my){
+        if(mx > x && mx < x+w && my > y && my < y+h){
+            onClick();
+        }
+    };
+};
+
+Button * button;
+
+
+class NumberWindow : public RenderableObject{
+    
+public:
+    double number=0;
+    std::string text;
+    int x,y,w=80,h=26;
+    bool active = false;
+
+    NumberWindow(int x, int y, double number){
+        this->x = x;
+        this->y = y;
+        text = to_string(number);
+
+        //Roundup text
+        while(text.find(".") != -1 && (text[text.size()-1] == '0' || text[text.size()-1] == '.')){
+            text = text.substr(0, text.size() - 1);
+        }
+    }
+
+    virtual void onButtonClick(SDL_KeyboardEvent * event){
+        if(!active) return;
+
+        if(text == "0")
+            text = "";
+
+        if(event->keysym.scancode == SDL_SCANCODE_0)
+            text += "0";
+        else if(event->keysym.scancode == SDL_SCANCODE_1)
+            text += "1";
+        else if(event->keysym.scancode == SDL_SCANCODE_2)
+            text += "2";
+        else if(event->keysym.scancode == SDL_SCANCODE_3)
+            text += "3";
+        else if(event->keysym.scancode == SDL_SCANCODE_4)
+            text += "4";
+        else if(event->keysym.scancode == SDL_SCANCODE_5)
+            text += "5";
+        else if(event->keysym.scancode == SDL_SCANCODE_6)
+            text += "6";
+        else if(event->keysym.scancode == SDL_SCANCODE_7)
+            text += "7";
+        else if(event->keysym.scancode == SDL_SCANCODE_8)
+            text += "8";
+        else if(event->keysym.scancode == SDL_SCANCODE_9)
+            text += "9";
+        else if(event->keysym.scancode == 55)
+            text += ".";
+        else if(event->keysym.scancode == SDL_SCANCODE_KP_MINUS)
+            text += "-";
+        else if(event->keysym.scancode == SDL_SCANCODE_BACKSPACE)
+            if(text.size() != 0){
+                text = text.substr(0, text.size()-1);
+            }
+        
+        if(text == ""){
+            number = 0;
+            text = "0";
+        }
+        else
+            try{
+                double n = stod(text);
+                number = n;
+            }
+            catch(const std::exception& e){}
+    }
+
+    virtual void renderProgram(){
+        Renderer::textOnScreen(x,y,20, text, Color(255,0,0));
+        Renderer::rectOnScreen(x-2,y-2, w, h, (active ? Color(255,0,0) : Color(100,100,100)) );
+    }
+
+    virtual void onScreenClick(int mx, int my){
+        if(mx > x && mx < x+w && my > y && my < y+h){
+            active = true;
+        }
+        else {
+            active = false;
+        }
+    };
+};
+
+
+class Text : public RenderableObject{
+    
+public:
+    std::string text;
+    int x,y;
+
+    virtual void onButtonClick(SDL_KeyboardEvent * event){}
+
+    virtual void renderProgram(){
+        int line = 0;
+        std::stringstream ss(text);
+        std::string token;
+
+        while(std::getline(ss, token, '\n')) {
+            Renderer::textOnScreen(x,y+line++*22,20, token, Color(255,0,0));
+        }
+    }
+
+    virtual void onScreenClick(int mx, int my){};
+};
+
+Text * triangsText;
+
+class FunctionWindow : public RenderableObject {
+public:
+    int x,y;
+    NumberWindow afunc, bfunc;
+    LinearFunction * func;
+
+    FunctionWindow(LinearFunction * func): afunc(10,10, func->getA()), bfunc(10,10, func->getB()){
+        afunc.number = func->getA();
+        bfunc.number = func->getB();
+        this->func = func;
+    }
+
+    virtual void onButtonClick(SDL_KeyboardEvent * event){
+        afunc.onButtonClick(event);
+        bfunc.onButtonClick(event);
+        func->setA(afunc.number);
+        func->setB(bfunc.number);
+    }
+
+    virtual void renderProgram(){
+        Renderer::textOnScreen(x, y, 25, "fn ", Color(255,0,0));
+        Renderer::textOnScreen(x+25, y, 25, func->getName(), func->getColor());
+
+        afunc.x = 60 + x;
+        afunc.y = y;
+        bfunc.x = 80 + 60 + 10 + x;
+        bfunc.y = y;
+
+        afunc.renderProgram();
+        bfunc.renderProgram();
+    }
+
+    virtual void onScreenClick(int x, int y){
+        afunc.onScreenClick(x,y);
+        bfunc.onScreenClick(x,y);
+    };
+};
+
+std::string triangs(){
+    std::stringstream ss;
+    ss<<"Informacja o wszystkich trojkatach:"<<std::endl;
+    std::vector<Triangle> trojkaty = FunctionService::allTriangles();
+
+    for(Triangle t : trojkaty){
+        ss<<"Trojkat "<<t.getName()<<" Pole: "<<t.countArea()<<" Obwod: "<<t.countObwod()<<std::endl;
+    }
+
+    return ss.str();
+}
+
+std::vector<RenderableObject*> renderableObjects;
+
 void drawProgram(){
+
+    triangsText->text = triangs();
     //Render grid
     Color smallGridColor = Color(100,100,100);
     Color bigGridColor = Color(120,180,120);
@@ -30,19 +225,38 @@ void drawProgram(){
     }
 
 
-    //Render triangles
-    for(Triangle triangle : FunctionService::triangulizeVertices()){
-        Renderer::triangle(
-            triangle.getVertexes()[0].getX(), triangle.getVertexes()[0].getY(),
-            triangle.getVertexes()[1].getX(), triangle.getVertexes()[1].getY(),
-            triangle.getVertexes()[2].getX(), triangle.getVertexes()[2].getY()
-        );
-    }
+    // //Render triangles
+    // for(Triangle triangle : FunctionService::triangulizeVertices()){
+    //     Renderer::triangle(
+    //         triangle.getVertexes()[0].getX(), triangle.getVertexes()[0].getY(),
+    //         triangle.getVertexes()[1].getX(), triangle.getVertexes()[1].getY(),
+    //         triangle.getVertexes()[2].getX(), triangle.getVertexes()[2].getY()
+    //     );
+    // }
     //Render points
     for(Vertex point : FunctionService::countVertices()){
-        Renderer::number(point.getX(), point.getY(), point.getName()[0], fontColor);
+        Renderer::text(point.getX(), point.getY(),20, point.getName(), fontColor);
         Renderer::point(point.getX(), point.getY(), pointColor);
     }
+
+    for(RenderableObject * renderable : renderableObjects){
+        renderable->renderProgram();
+    }
+    button->renderProgram();
+}
+
+void buttonEventFunction(SDL_KeyboardEvent * event){
+    for(RenderableObject * renderable : renderableObjects){
+        renderable->onButtonClick(event);
+    } 
+}
+
+void mouseClickEventFunction(int x, int y){
+    for(RenderableObject * renderable : renderableObjects){
+        renderable->onScreenClick(x,y);
+    }
+
+    button->onScreenClick(x,y);
 }
 
 void loadFunctionsFromCmdLine(int argc, char *argv[]){
@@ -59,6 +273,47 @@ void cmdlineLoop(){
         commandRegistry.executeCommand(command);
         std::cout<<">>";
     }
+}
+
+void addNewFunction(double a, double b);
+
+void newFunction(){
+    addNewFunction(0,0);
+}
+
+
+
+void remakeFunctionRendering(){
+    for(RenderableObject * renderable : renderableObjects){
+        delete renderable;
+    }
+
+    renderableObjects.clear();
+
+    int i = 1;
+
+    for(LinearFunction * function : FunctionService::getFunctions()){
+        FunctionWindow *functionWindow = new FunctionWindow(function);
+        functionWindow->x = 10;
+        functionWindow->y = 10 + i++*30;
+        renderableObjects.push_back(functionWindow);
+    }
+
+    Text * text = new Text();
+    text->text = triangs();
+    text->x = 10;
+    text->y = 10 + i * 30;
+
+    triangsText = text;
+    renderableObjects.push_back(text);
+    
+}
+
+void addNewFunction(double a, double b){
+    LinearFunction* func = new LinearFunction(a,b);
+    FunctionService::addFunction(func);
+    std::cout<<"Dodano funkcję "<<func->toString()<<std::endl;
+    remakeFunctionRendering();
 }
 
 void registerCommands(){
@@ -98,9 +353,7 @@ void registerCommands(){
         std::string name;
         std::stringstream ss(args);
         ss>>name>>a>>b;
-        LinearFunction* func = new LinearFunction(a,b);
-        FunctionService::addFunction(func);
-        std::cout<<"Dodano funkcję "<<func->toString()<<std::endl;
+        addNewFunction(a,b);
     }));
 
     commandRegistry.registerCommandHandler(
@@ -200,12 +453,7 @@ void registerCommands(){
     commandRegistry.registerCommandHandler(
         new InlineCommandHandler("triangs", "info o wszystkich trójkatach",[](std::string args)
     {
-        std::cout<<"Informacja o wszystkich trójkątach:"<<std::endl;
-        std::vector<Triangle> trojkaty = FunctionService::allTriangles();
-
-        for(Triangle t : trojkaty){
-            std::cout<<"Trójkąt "<<t.getName()<<" Pole: "<<t.countArea()<<" Obwód: "<<t.countObwod()<<std::endl;
-        }
+        std::cout<<triangs();
     }));
 }
 
@@ -215,9 +463,17 @@ int main(int argc, char *argv[]) {
     loadFunctionsFromCmdLine(argc,argv);
     registerCommands();
 
+    button = new Button(10, 10, "New function");
+    button->w = 160;
+    button->onClick = [](){addNewFunction(0,0);};
+
     //Initializacja renderera
+
+    remakeFunctionRendering();
     Renderer::init();
     Renderer::setDrawProgram(drawProgram);
+    Renderer::setButtonEventFunction(buttonEventFunction);
+    Renderer::setMouseClickEventFunction(mouseClickEventFunction);
 
     cmdlineLoop();
 

@@ -19,3 +19,7 @@ Color::Color(int r, int g, int b){
     this->g = g;
     this->b = b;
 }
+
+SDL_Color Color::toSDLColor(){
+    return {r,g,b};
+}

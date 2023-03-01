@@ -35,6 +35,7 @@ std::vector<Vertex> FunctionService::countVertices() {
     std::vector<Vertex> vertices;
     char name = '1';
 
+    if(functions.size()!=0)
     for(int i=0;i<functions.size()-1;i++)
         for (int j = i + 1; j < functions.size(); j++)
         {
@@ -67,8 +68,11 @@ std::vector<Triangle> FunctionService::triangulizeVertices() {
 }
 
 std::vector<Triangle> FunctionService::allTriangles(){
+    
+
     std::vector<Triangle> triangles;
     std::vector<Vertex> vertices = FunctionService::countVertices();
+    if(vertices.size() < 3) return std::vector<Triangle>();
 
     for(int i=0;i<vertices.size()-2;i++)
         for (int j =i+1; j < vertices.size()-1; j++)

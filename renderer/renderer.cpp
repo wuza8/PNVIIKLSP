@@ -1,14 +1,14 @@
 #include "renderer/renderer.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_test_font.h>
-#include <thread>
-#include <iostream>
 
 SDL_Window * win;
 SDL_Renderer * rend;
 std::thread * rendererThread;
 
+std::map<int,TTF_Font*> fonts; 
+
 void (*drawProgram)() = NULL;
+void (*buttonEvent)(SDL_KeyboardEvent*) = NULL;
+void (*mouseClick)(int, int) = NULL;
 
 float posX = 0;
 float posY = 0;
@@ -26,14 +26,24 @@ void present(){
     SDL_RenderPresent(rend);
 }
 
-
 bool isLeftMouseButtonClicked = false;
+int mouseX, mouseY;
+
+void Renderer::setMouseClickEventFunction(void (*mouse)(int, int)){
+    mouseClick = mouse;
+}
 
 void mouseMovement(SDL_MouseMotionEvent *event){
     if(isLeftMouseButtonClicked == true){
         posX += (float) event->xrel / blockSize;
         posY += (float) event->yrel / blockSize;
     }
+    mouseX = event->x;
+    mouseY = event->y;
+}
+
+void Renderer::setButtonEventFunction( void (*fun)(SDL_KeyboardEvent*) ){
+    buttonEvent = fun;
 }
 
 void buttonDownEvent(SDL_KeyboardEvent *event){
@@ -43,6 +53,7 @@ void buttonDownEvent(SDL_KeyboardEvent *event){
     else if(event->keysym.scancode == SDL_SCANCODE_KP_MINUS){
         blockSize-=1;
     }
+    buttonEvent(event);
 }
 
 void startLoop(){
@@ -62,7 +73,7 @@ void startLoop(){
                 case SDL_MOUSEMOTION:
                     mouseMovement((SDL_MouseMotionEvent*) &event); break;
                 case SDL_MOUSEBUTTONDOWN:
-                    isLeftMouseButtonClicked = true; break;
+                    isLeftMouseButtonClicked = true; mouseClick(mouseX,mouseY); break;
                 case SDL_MOUSEBUTTONUP:
                     isLeftMouseButtonClicked = false; break;
                 case SDL_KEYDOWN:
@@ -78,6 +89,9 @@ void Renderer::init(){
 	// returns zero on success else non-zero
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
 		printf("error initializing SDL: %s\n", SDL_GetError());
+	}
+    if (TTF_Init() != 0) {
+		printf("error initializing TTF SDL: %s\n", SDL_GetError());
 	}
 	win = SDL_CreateWindow("PNVIIKLSP", // creates a window
 									SDL_WINDOWPOS_CENTERED,
@@ -98,6 +112,12 @@ void Renderer::init(){
     rendererThread = new std::thread(startLoop);
 }
 
+void Renderer::rectOnScreen(int x, int y, int w, int h, Color color){
+    Renderer::lineOnScreen(x, y, x+w, y, color);
+    Renderer::lineOnScreen(x, y, x, y+h, color);
+    Renderer::lineOnScreen(x+w, y, x+w, y+h, color);
+    Renderer::lineOnScreen(x, y+h, x+w, y+h, color);
+}
 
 
 void drawLine(int x1, int y1, int x2, int y2, int colR=255, int colG=0, int colB=0){
@@ -107,6 +127,10 @@ void drawLine(int x1, int y1, int x2, int y2, int colR=255, int colG=0, int colB
 
 void drawLine(int x1, int y1, int x2, int y2, Color color){
     drawLine(x1, y1,x2, y2, color.getR(), color.getG(), color.getB());
+}
+
+void Renderer::lineOnScreen(int x1, int y1, int x2, int y2, Color color){
+    drawLine(x1,y1,x2,y2,color);
 }
 
 void drawMesh(){
@@ -192,46 +216,33 @@ void Renderer::close(){
 	SDL_Quit();
 }
 
-void renderDigitor(int x, int y, int w, short digitor, Color color){
-    if(digitor & 0b00000001)
-        drawLine(x, y, x+w, y, color);
-    if(digitor & 0b00000010)
-        drawLine(x, y, x, y+w, color);
-    if(digitor & 0b00000100)
-        drawLine(x+w, y, x+w, y+w, color);
-    if(digitor & 0b00001000)
-        drawLine(x, y+w, x+w, y+w, color);
-    if(digitor & 0b00010000)
-        drawLine(x, y+w, x, y+w+w, color);
-    if(digitor & 0b00100000)
-        drawLine(x+w, y+w, x+w, y+w+w, color);
-    if(digitor & 0b01000000)
-        drawLine(x, y+w+w, x+w, y+w+w, color);
+void renderText(int x, int y, int fontSize, std::string text, Color color){
+    if(fonts.find(fontSize) == fonts.end()){
+        fonts[fontSize] = TTF_OpenFont("../helvetica-normal.ttf", fontSize);
+    }
+
+    TTF_Font * font = fonts[fontSize];
+    SDL_Surface * surface = TTF_RenderText_Solid(font, text.c_str(), color.toSDLColor());
+
+    SDL_Texture * texture = SDL_CreateTextureFromSurface(rend, surface);
+
+    SDL_Rect rect;
+    rect.x = x;
+    rect.y = y;
+    rect.w = surface->w;
+    rect.h = surface->h;
+
+    SDL_RenderCopy(rend, texture,NULL, &rect);
+    SDL_DestroyTexture(texture);
+    SDL_FreeSurface(surface);
 }
 
-void renderNumber(int x, int y, int w, char n, Color color){
-    if(n=='1')
-        renderDigitor(x, y, w, 0b00100100, color);
-    if(n=='2')
-        renderDigitor(x, y, w, 0b01011101, color);
-    if(n=='3')
-        renderDigitor(x, y, w, 0b01101101, color);
-    if(n=='4')
-        renderDigitor(x, y, w, 0b00101110, color);
-    if(n=='5')
-        renderDigitor(x, y, w, 0b01101011, color);
-    if(n=='6')
-        renderDigitor(x, y, w, 0b01111011, color);
-    if(n=='7')
-        renderDigitor(x, y, w, 0b00100101, color);
-    if(n=='8')
-        renderDigitor(x, y, w, 0b01111111, color);
-    if(n=='9')
-        renderDigitor(x, y, w, 0b01101111, color);
+void Renderer::text(float x, float y, int fontSize, std::string text, Color color){
+    renderText((int) (blockSize*x + posX*blockSize) + width/2, (int) (blockSize*(y*-1) + posY*blockSize) + height/2, fontSize, text , color);
 }
 
-void Renderer::number(float x, float y, char c, Color color){
-    renderNumber((int) (blockSize*x + posX*blockSize) + width/2, (int) (blockSize*(y*-1) + posY*blockSize) + height/2, 20, c , color);
+void Renderer::textOnScreen(int x, int y, int fontSize, std::string text, Color color){
+    renderText(x, y, fontSize, text , color);
 }
 
 
